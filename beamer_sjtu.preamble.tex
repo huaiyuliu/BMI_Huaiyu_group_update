@@ -1,0 +1,97 @@
+%Modified Beamer Style sheet for NGNI publications
+%Last edited by: Lieuwe B. Leene 2017 August
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 3.
+
+%% Before using the beamer preamble which prepares a standardised NGNI format.
+%% There are a few comments regarding the file structure
+%% beamer.preamble.tex will prepares latex packages/commands
+%% beamerthemengni.sty formats the general style of the template fonts & colors
+%% beamerouterthemengni.tsy formats slide specific things such as title & Footer
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% PACKAGES -  Comment any package deemed unnecessary  %
+% % % % % % % % % % % % % % % % % % % % % % % % % % % %
+\usepackage{datetime}% dat e and time
+\usepackage{graphicx}  % figures, graphics, etc.
+\usepackage{latexsym}  % Optional extra symbols from LaTeX2.09
+\usepackage{amsmath,amssymb}   % Math formatting & symbols
+%Specific for AMSMATH - (re)allows page breaks within aligned equations as IEEEtran normally does.
+\interdisplaylinepenalty=2500
+
+\usepackage{lipsum}
+\usepackage{subfigure} % Introduce Subfigures
+\usepackage{cite}      % Citation handle
+\usepackage{xcolor} % Colour
+
+% % % % % % % % % % % % % % % % % % % %
+% BEAMER - configuration / settings   %
+% % % % % % % % % % % % % % % % % % % %
+
+% % suppress navigation bar
+% \beamertemplatenavigationsymbolsempty
+
+% \mode<presentation>
+% {
+% 	\usetheme{ngni}
+% 	\setbeamercovered{transparent}
+% 	\setbeamertemplate{items}[circle]
+% }
+
+% set fonts is desired but this will require xelatex or lualatex
+%\usepackage{fontspec}
+%\setsansfont{OpenSans}
+
+% % % % % % % % % % % % % % % % % % % %
+% DOCUMENT - configuration / commands %
+% % % % % % % % % % % % % % % % % % % %
+
+\newcommand{\icon}[1]{\includegraphics[height=10pt,width=10pt,keepaspectratio]{Style/icons/#1.pdf}} %
+\newcommand{\Icon}[1]{\includegraphics[height=16pt,width=16pt,keepaspectratio]{Style/icons/#1.pdf}} % width=10pt
+
+% Round down Math Mode
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+% Easy use for nomenclature table
+\newcommand{\csymbol}[2]{\textbf{#1} & - &  #2\\}
+
+% problem with newer live versions of latex2e & fixltx2e
+%\makeatletter
+%\DeclareRobustCommand*\textsubscript[1]{%
+%	\@textsubscript{\selectfont#1}}
+%\def\@textsubscript#1{%
+%	{\m@th\ensuremath{_{\mbox{\fontsize\sf@size\z@#1}}}}}
+%\makeatother
+
+% Neat square in bold math text mode
+\newcommand{\tsqrd}{\textsuperscript{2}~}
+% Neat subscript in textmode
+\newcommand{\tss}[1]{\textsubscript{#1}}
+% Neat superscript in textmode
+\newcommand{\tps}[1]{\textsuperscript{#1}}
+
+% Color comments for review
+\colorlet{CmntClr}{black!60!green}
+\newcommand{\cmnt}[1]{\textcolor{CmntClr}{#1}}
+\colorlet{EditClr}{black!10!orange}
+\newcommand{\edit}[1]{\textcolor{EditClr}{#1}}
+
+% Color table with shade of green according to the decimal in the cell and print percentage
+\newcommand{\flcl}[1]{\cellcolor[rgb]{0.3,#1,0.3} \FPeval{\result}{round(#1*100,1)} \result\%}
+
+% Auto Color Done Statment
+\colorlet{OkGreen}{blue!30!black!60!green}
+\newcommand{\done}[1]{\textcolor{OkGreen}{#1 \checkmark}}
+
+\definecolor{ngniblue}{RGB}{34,57,106}
+\definecolor{ngnired}{RGB}{218,30,37}
+\definecolor{ngniwhite}{RGB}{240,240,255}
+\definecolor{ngniblack}{RGB}{0,0,30}
+
+% Configure Hyperlink Colours and inline references
+% The link color
+%\hypersetup{
+%	colorlinks,
+%	linkcolor={white},
+%	citecolor={blue!60!black},
+%	urlcolor={ngnired}
+%}

@@ -1,14 +1,57 @@
-\documentclass{article}
-\usepackage[utf8]{inputenc}
+% !TeX program = pdflatex
+% Beamer Base Template for SJTU
 
-\title{test}
-\author{yanliuic }
-\date{November 2019}
+% Please un comment one of the two lines for 4:3 or 16:9 paper size
+%\documentclass[10pt,aspectratio=43]{beamer} \newif\ifwideas\wideasfalse
+\documentclass[10pt,aspectratio=169]{beamer} \newif\ifwideas\wideastrue
+
+\input{beamer_sjtu.preamble.tex} % Please see the contianed comments
+
+\newdate{thismeetingdate}{21}{11}{2019}
+\newdate{lastmeetingdate}{7}{11}{2019}
 
 \begin{document}
+%\bstctlcite{IEEEexample:BSTcontrol}
 
+%% Put the presentation title here
+\title{Group Meeting }%
+%
+% \subtitle{} %% DO NOT REMOVE OR Footer Subtitle will show on title page
+% \titlegraphic{}  %% DO NOT REMOVE OR Graphic will show on title page
+%
+%% Put Author and Institute details here
+\author{SJTU-BMI-Yan}
+\institute{Department of Micro and Nano Electronics\\%
+Shanghai Jiaotong University, China\\}\smallskip%
+\date{Group meeting \displaydate{thismeetingdate}}
+% \href{http://www.imperial.ac.uk/neural-interfaces}{www.imperial.ac.uk/neural-interfaces}}%
 \maketitle
 
-\section{Introduction}
+%% Put the Footer Subtitle Here
+% \subtitle{Title \, - \, IEEE Conference 2017}
+%% This shows some Footer graphics
+% \titlegraphic{\includegraphics[height=2.5ex, trim=1mm 2mm 20mm -1mm]{Style/banner_name_white.pdf}\includegraphics[width=2cm, angle=90, trim=-14mm -3mm 0mm 0mm]{Style/banner_icon.pdf}}
+
+%% Slides Start Here each slide should be made as a frame
+%% See the Beamer documentation in './Style' to see how frames should be made
+
+\section{Table of Content}
+\begin{frame}
+\frametitle{\secname}
+\tableofcontents
+\end{frame}
+
+\input{./members/huaiyu_liu/member.tex} % Please see the contianed comments
+\input{./members/changyun_fu/member.tex} % Please see the contianed comments
+\input{./members/yifan_zhao/member.tex} % Please see the contianed comments
+\input{./members/peng_yan/member.tex} % Please see the contianed comments
+\input{./members/yan_liu/member.tex} % Please see the contianed comments
+
+
+\section{Group discussion}
+\begin{frame}
+\frametitle{\secname}
+
+\end{frame}
 
 \end{document}
